@@ -9,12 +9,14 @@ int main(void)
 {
 	int integro;
 	float flotante;
-	double doubleType;
+	long int integrolargo;
+	long long int integromaslargo;
 	char charType;
 
-	printf("Size of a char: %d byte(s)\n", sizeof(charType));
-	printf("Size of an int: %d byte(s)\n", sizeof(integro));
-	printf("Size of a long init: %d byte(s)\n", sizeof(doubleType));
-	printf("Size of a float: %d byte(s)\n", sizeof(flotante));
+	printf("Size of a char: %ld byte(s)\n", sizeof(charType));
+	printf("Size of an int: %ld byte(s)\n", sizeof(integro));
+	printf("Size of a long init: %ld byte(s)\n", sizeof(integrolargo));
+	printf("Size of a long long init: %ld byte(s)\n", sizeof(integromaslargo));
+	printf("Size of a float: %ld byte(s)\n", sizeof(flotante));
 	return (0);
 }
