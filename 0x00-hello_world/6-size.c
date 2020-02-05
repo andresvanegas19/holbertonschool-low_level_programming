@@ -12,9 +12,9 @@ int main(void)
 	double doubleType;
 	char charType;
 
-	printf("Size of a char: %d", sizeof(charType));
-	printf("Size of an int: %d", sizeof(integro));
-	printf("Size of a long init: %d", sizeof(doubleType));
-	printf("Size of a float: %d", sizeof(flotante));
+	printf("Size of a char: %d byte(s)\n", sizeof(charType));
+	printf("Size of an int: %d byte(s)\n", sizeof(integro));
+	printf("Size of a long init: %d byte(s)\n", sizeof(doubleType));
+	printf("Size of a float: %d byte(s)\n", sizeof(flotante));
 	return (0);
 }
