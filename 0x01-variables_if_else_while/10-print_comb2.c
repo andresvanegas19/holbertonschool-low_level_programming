@@ -10,13 +10,18 @@ int main(void)
 
 	for (a = '0'; a <= '9'; ++a)
 	{
-		putchar('0');
-		putchar(a);
-	}
-	for (b = "10"; b <= "99"; ++b)
-	{
-		putchar(b);
+		for (b = '1'; b <= '9'; ++b)
+		{
+				putchar(a);
+				putchar(b);
+			if (a != '9' || b != '9')
+			{
+				putchar(' ');
+				putchar(',');
+			}
+		}
 	}
 	putchar('\n');
+
 	return (0);
 }
