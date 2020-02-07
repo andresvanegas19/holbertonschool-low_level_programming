@@ -12,19 +12,11 @@ int main(void)
 	{
 		for (b = '0'; b <= '9'; ++b)
 		{
-			for (c = a; c <= '9'; ++c)
+			for (c = '0'; c <= '9'; ++c)
 			{
-				if (b == '0')
+				for (d = '0'; d <= '9'; ++d)
 				{
-					d = b;
-				}
-				else
-				{
-					d = b + 1;
-				}
-				for (; d <= '9'; ++d)
-				{
-				if (!(c == '0' && d == '0'))
+				if (a < c || (a == c && b < d))
 				{
 					putchar(a);
 					putchar(b);
