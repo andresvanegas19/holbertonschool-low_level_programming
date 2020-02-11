@@ -2,7 +2,7 @@
 
 /**
  * print_last_digit - This function use a di
- * @n: the character to print
+ * @a: the character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
@@ -10,7 +10,7 @@
 
 int print_last_digit(int a)
 {
-	int b = a;
+	int b;
 
 	if (a > 0 || a == 0)
 	{
