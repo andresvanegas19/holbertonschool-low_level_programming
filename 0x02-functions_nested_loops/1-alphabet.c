@@ -2,7 +2,7 @@
 
 /* Es una libreria que va usar el putchar */
 /**
- * main - check the code for Holberton School students.
+ * print_alphabet - is a function you can  print the letter to a an z
  *
  * Return: Always 0.
  */
