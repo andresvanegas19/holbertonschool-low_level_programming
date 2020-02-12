@@ -5,7 +5,6 @@
  * @n: the character to print
  *
  * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
 */
 
 int print_sign(int n)
@@ -25,5 +24,5 @@ int print_sign(int n)
 		_putchar('-');
 		return (n);
 	}
-	return (n);
+	return (0);
 }
