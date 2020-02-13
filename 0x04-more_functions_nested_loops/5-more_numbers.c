@@ -2,6 +2,8 @@
 
 /**
  * more_numbers - prints the numbers, from 0 to 14 just only putchar
+ *
+ * Return: return 0 is succesed
  */
 
 void more_numbers(void)
