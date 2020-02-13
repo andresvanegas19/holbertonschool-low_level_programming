@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * print_diagonal -  draws a diagonal line on the terminal depent of the int
- * @n: the character to sign who long the lines it want.
+ * print_square -  prints a square
+ * @size: the character to sign a square.
  *
  */
 

@@ -2,6 +2,8 @@
 
 /**
  * main - prints the numbers from 1 to 100,multiples of three and five.
+ *
+ * Return: return 0 is succesed 
  */
 
 int main(void)
@@ -26,7 +28,7 @@ int main(void)
 		{
 			printf("%d", a);
 		}
-		
+
 		if (a != 100)
 			printf(" ");
 	}
