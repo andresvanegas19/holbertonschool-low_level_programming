@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * more_numbers - prints the numbers, from 0 to 14 just only putchar
+ * print_line -  that draws a straight line in the terminal
  * @n: the character to sign who many tabs are print
  *
  */
@@ -14,7 +14,7 @@ void print_line(int n)
 	{
 		for (a = 1; a <= n; a++)
 		{
-   			 _putchar('_');
+			_putchar('_');
 		}
 	_putchar('\n');
 	}
