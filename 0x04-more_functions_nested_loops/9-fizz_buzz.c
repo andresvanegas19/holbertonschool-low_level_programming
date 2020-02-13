@@ -12,20 +12,23 @@ int main(void)
 	{
 		if ((a % 3 == 0 || a % 3 == 3) && a % 5 == 0)
 		{
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		}
 		else if (a % 3 == 0 || a % 3 == 3)
 		{
-			printf("Fizz ");
+			printf("Fizz");
 		}
 		else if ((a % 10) == 0 || (a % 10) == 5)
 		{
-			printf("Buzz ");
+			printf("Buzz");
 		}
 		else
 		{
-			printf("%d ", a);
+			printf("%d", a);
 		}
+		
+		if (a != 100)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
