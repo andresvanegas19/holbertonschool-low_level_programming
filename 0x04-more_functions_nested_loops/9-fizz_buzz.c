@@ -4,7 +4,7 @@
  * main - prints the numbers from 1 to 100,multiples of three and five.
  */
 
-void main(void)
+int main(void)
 {
 	int a;
 
@@ -27,5 +27,7 @@ void main(void)
 			printf("%d ", a);
 		}
 	}
+	printf("\n");
+	return (0);
 }
 
