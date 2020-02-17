@@ -1,14 +1,19 @@
 #include "holberton.h"
 
 /**
+<<<<<<< HEAD
  * print_diagonal -  draws a diagonal line on the terminal depent of the int
  * @n: the character to sign who long the lines it want.
+=======
+ * print_triangle -  draws a half of a triangle
+ * @size: the character to sign who long is the triangle
+>>>>>>> f13e98e1f164d2930d704364829cdc5d91f4369e
  *
  */
 
 void print_triangle(int size)
 {
-	int a, b, c;
+	int a, b;
 
 	if (size > 0)
 	{
@@ -16,15 +21,12 @@ void print_triangle(int size)
 		{
 			for (b = 1; b <= size; b++)
 			{
-				if ( b < c) 
+				if (b <= (size - a))
 				{
-					_putchar(' ');
+				_putchar(' ');
 				}
-				else 
-				{
-					_putchar('#');
-				}
-			c = size - 1;	
+				else
+				_putchar('#');
 			}
 			_putchar('\n');
 		}
