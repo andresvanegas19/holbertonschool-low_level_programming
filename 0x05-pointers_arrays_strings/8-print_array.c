@@ -1,12 +1,13 @@
 #include <stdio.h>
 /**
- * print_rev - print the reverse of the string
- * @s: pointer to the string
+ * print_array - print the array
+ * @a: pointer to the array
+ * @n: point to the max of the array
  */
 
 void print_array(int *a, int n)
 {
-	int b; 
+	int b;
 
 	for (b = 0; b < n; b++)
 	{

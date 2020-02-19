@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * puts2 - show the string of the argument we passed
+ * puts_half - only display the middle of the array
  * @str: pointer to the string
  */
 void puts_half(char *str)
@@ -19,7 +19,7 @@ void puts_half(char *str)
 			_putchar(str[b]);
 		}
 	}
-	else 
+	else
 	{
 		last = ((a - 1) / 2);
 		for (b = last; str[b] != '\0'; b++)
