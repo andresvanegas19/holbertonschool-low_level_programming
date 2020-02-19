@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_rev - print the reverse of the string
+ * rev_string - print the reverse of the string
  * @s: pointer to the string
  */
 void rev_string(char *s)
@@ -12,9 +12,9 @@ void rev_string(char *s)
 	{
 		len++;
 	}
-    	len = len - 1;
+	len = len - 1;
 
-	while (len >= b)    
+	while (len >= b)
 	{
 		save = *(s + b);
 		*(s + b) = *(s + len);
