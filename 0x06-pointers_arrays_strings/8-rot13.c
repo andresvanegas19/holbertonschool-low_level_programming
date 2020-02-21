@@ -1,6 +1,6 @@
 /**
  * rot13 - encodes a strign into ROT
- * @s: an array is in noraml
+ * @arr: an array is in lettlers
  *
  * Return: a encryptin result
  */
