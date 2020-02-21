@@ -1,18 +1,31 @@
 /**
  * *cap_string - became uppercase each beggining letter
- *@s: pointer to the array
+ *@arr: pointer to the array
  *
- *Return: the string whit each in uppercase
+ *Return: the string whit each word has in uppercase
  */
 
-char *cap_string(char *s)
+char *cap_string(char *arr)
 {
 
-	int i = 0;
-	int a[14] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	int a, b;
+	char separador[] = {' ', '\t', '\n', ',', ';', '.', '!'
+				, '?', '"', '(', ')', '{', '}'};
 
-	for (i = 0; s[i] != '\0'; i++)
+	if (*arr >= 'a' && *arr <= 'z')
+		*arr -= 32;
+
+	for (a = 0; arr[a] != '\0'; a++)
 	{
+		for (b = 0; separador[b] != '\0'; b++)
+		{
+			if (arr[a] == separador[b])
+			{
+				if (arr[a + 1] >= 'a' &&  arr[a + 1] <= 'z')
+					arr[a + 1] -= 32;
+			}
+		}
 	}
-	return (s);
+
+	return (arr);
 }
