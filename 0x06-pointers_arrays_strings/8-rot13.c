@@ -5,7 +5,7 @@
  * Return: a encryptin result
  */
 
-char *rot13(char *s)
+char *rot13(char *arr)
 {
 
 	char original[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -13,14 +13,17 @@ char *rot13(char *s)
 	/* para encriptar */
 	int a, b;
 
-	for (a = 0, b = 0; s[a] != '\0' && original[b] != '\0'; a++, b++)
+	for (a = 0; arr[a]; a++)
 	{
-		if (s[a] == original[b])
+		for (b = 0; arr[b] ; b++)
 		{
-			s[a] = encriptado[b];
-			break;
+			if (arr[a] == original[b])
+			{
+				arr[a] = encriptado[b];
+				break;
+			}
 		}
 	}
 
-	return (s);
+	return (arr);
 }
