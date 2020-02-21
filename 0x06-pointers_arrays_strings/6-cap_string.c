@@ -1,6 +1,7 @@
 /**
  * *cap_string - became uppercase each beggining letter
  *@s: pointer to the array
+ *
  *Return: the string whit each in uppercase
  */
 
