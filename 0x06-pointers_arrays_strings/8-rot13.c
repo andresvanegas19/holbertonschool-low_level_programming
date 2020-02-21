@@ -25,5 +25,6 @@ char *rot13(char *arr)
 		}
 	}
 
-	return (arr);
+return (arr);
+
 }
