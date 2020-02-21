@@ -1,6 +1,8 @@
 /**
- * rev_string - print the reverse of the string
- * @s: pointer to the string
+ * reverse_array - print the reverse of the string
+ * @a: pointer to string
+ * @n: the max of the string
+ *
  */
 void reverse_array(int *a, int n)
 {
