@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * print_number - print number only whit putchar
  * @n: the number
@@ -9,7 +11,7 @@ void print_number(int n)
 
 	if (copy < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		copy = copy * -1;
 	}
 	if ((copy / 10) > 0)
@@ -17,5 +19,5 @@ void print_number(int n)
 		print_number(copy / 10);
 	}
 
-	putchar((copy % 10) + '0');
+	_putchar((copy % 10) + '0');
 }
