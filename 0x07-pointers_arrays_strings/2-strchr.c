@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * _strchr - prints when the pointer find the letter
  * @s: the address of array
@@ -16,7 +17,7 @@ char *_strchr(char *s, char c)
 		}
 		if (!*s != '\0')
 		{
-			return (s = 00);
+			return (NULL);
 		}
 		s++;
 	}
