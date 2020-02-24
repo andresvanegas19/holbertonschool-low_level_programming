@@ -1,4 +1,6 @@
+#include "holberton.h"
 #include <stdio.h>
+
 /**
  * _strchr - prints when the pointer find the letter
  * @s: the address of array
