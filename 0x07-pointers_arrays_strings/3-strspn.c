@@ -8,7 +8,8 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int bites, a, b;
+	unsigned int bites;
+	int a, b;
 
 	for (a = 0; a < 5; a++)
 	{
