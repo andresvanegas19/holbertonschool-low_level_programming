@@ -1,8 +1,7 @@
 #include "holberton.h"
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * print_chessboard - print a chess an it is a dimensional array
+ * @a: the pointer to array
  */
 
 void print_chessboard(char (*a)[8])
