@@ -13,7 +13,7 @@ int checkprime(int n, int check)
 
 	if (check < n)
 	{
-		if( (n % check) == 0)
+		if ((n % check) == 0)
 			return (0);
 	}
 	else
@@ -24,7 +24,7 @@ int checkprime(int n, int check)
 
 }
 /**
- * is_prime_number - print 1 if the integer is a prime number, otherws return 0.
+ * is_prime_number - print 1 if the integer is a prime number, otherws return 0
  * @n: is the value it will square root
  *
  * Return: to another function to made a operation.
@@ -32,5 +32,5 @@ int checkprime(int n, int check)
 
 int is_prime_number(int n)
 {
-	return (checkprime(n,2));
+	return (checkprime(n, 2));
 }
