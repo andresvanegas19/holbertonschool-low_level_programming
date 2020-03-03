@@ -20,19 +20,32 @@ char *str_concat(char *s1, char *s2)
 	while (s1[i])
 	{
 		i++;
+
 		while (s2[j])
+		{
 			j++;
+		}
 	}
 
-	pstr = malloc(sizeof(char) * i);
+	pstr = malloc(sizeof(char) * ((i + 1) + (j + 1)));
 
 	if (pstr == NULL)
 		return (NULL);
 
-	while (str[j])
+/* Reset the variables */
+	i = 0;
+	j = 0;
+
+	while (s1[i])
 	{
-		pstr[j] = str[j];
+		pstr[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		pstr[i] = s2[j];
 		j++;
+		i++;
 	}
 
 	return (pstr);
