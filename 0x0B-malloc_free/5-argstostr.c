@@ -18,21 +18,13 @@ char *argstostr(int ac, char **av)
 
 	while (i < ac)
 	{
-		printf("%s\n", av[i]);
-		i++;
-		for (j = 0; av[i] != '\0'; j++)
+		while (*av++)
 		{
-			printf("%s\n", av[i][j]);
+			printf("%d\n", j);
+			printf("%s\n", *av);
 		}
-
-
+		i++;
 	}
-
-
-
-	printf("%d\n", i);
-
-
 
 	return (pc);
 }
