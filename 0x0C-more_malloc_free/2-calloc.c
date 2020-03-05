@@ -18,12 +18,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	pmemory = malloc(size * nmemb);
 	if (pmemory == NULL)
-	{
-		free(pmemory);
 		return (NULL);
-	}
 
-	for (i = 0; i < nmemb; i++)
+	for (i = 0; i < (size * nmemb); i++)
 		pmemory[i] = 0;
 
 	return (pmemory);
