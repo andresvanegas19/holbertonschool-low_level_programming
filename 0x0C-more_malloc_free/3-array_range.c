@@ -26,6 +26,5 @@ int *array_range(int min, int max)
 	{
 		pi[i] = j;
 	}
-
 	return (pi);
 }
