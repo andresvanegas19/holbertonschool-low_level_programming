@@ -14,6 +14,9 @@ char *argstostr(int ac, char **av)
 	int i = 0, j = 0, size = 0;
 	char *pc = NULL;
 
+	if (av == NULL || ac == NULL)
+		return (NULL);
+
 	for (i = 1; i < ac; i++)
 	{
 		j = 0;
@@ -23,16 +26,15 @@ char *argstostr(int ac, char **av)
 			size++;
 		}
 		size++;
-
 	}
 
 	pc = malloc(sizeof(char) * size);
-	if ( pc == NULL)
+	if (pc == NULL)
 	{
 		return (NULL);
 	}
-/* Restart the variables */
 
+/* Restart the variables */
 	size = 0;
 	for (i = 0; i < ac; i++)
 	{

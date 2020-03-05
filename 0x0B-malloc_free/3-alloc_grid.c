@@ -12,12 +12,7 @@ int **alloc_grid(int width, int height)
 {
 	int **pparr, i = 0, j = 0;
 
-	if (width < 1)
-	{
-		return (NULL);
-	}
-
-	if (height < 1)
+	if (width < 1 || height < 1)
 	{
 		return (NULL);
 	}
@@ -29,9 +24,7 @@ int **alloc_grid(int width, int height)
 		free(pparr);
 		return (NULL);
 	}
-
 /* assign memory to the deep pointers */
-
 	for (i = 0; i < height; i++)
 	{
 		pparr[i] = malloc(sizeof(int) * width);
@@ -41,10 +34,10 @@ int **alloc_grid(int width, int height)
 			{
 				free(pparr[j]);
 			}
+			free(pparr);
 			return (NULL);
 		}
 	}
-
 	for (i = 0; i < height; i++)
 	{
 		for (j = 0; j < width; j++)
