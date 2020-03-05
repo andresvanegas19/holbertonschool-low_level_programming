@@ -37,15 +37,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (pstr == NULL)
 			return (NULL);
 	}
+
 	for (i = 0; s1[i] != '\0'; i++)
 		pstr[i] = s1[i];
 	pstr[i] = '\n';
 	if (size >= j)
 		while (s2[count])
 			pstr[i] = s2[count];
+
 	else
 		for (count = 0; count < word; count++, i++)
 			pstr[i] = s2[count];
+
 	pstr[i] = '\0';
 	return (pstr);
 }
