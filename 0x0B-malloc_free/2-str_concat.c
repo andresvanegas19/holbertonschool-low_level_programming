@@ -2,56 +2,49 @@
 #include <stdio.h>
 
 /**
- * str_concat - concatenates two strings
- * @s1: first string
- * @s2: second string
+ * alloc_grid - returns a pointer to a 2 dimensional array of integers
+ * @width: size of width of the array
+ * @height: size of height of the rray
  *
- * Return: an concatenate string.
+ * Return: an array with the width and height delimited
  */
 
-char *str_concat(char *s1, char *s2)
+int **alloc_grid(int width, int height)
 {
-	char *pstr = NULL;
+	char *parr = NULL;
 	int i = 0, j = 0;
 
-	if (s1 == NULL || s2 == NULL)
+	parr = malloc (sizeof(int *) * height);
+	if (parr == NULL)
 	{
-		s1 = "";
-		s2 = "";
+		free(parr);
+		return (NULL);
 	}
 
-	while (s1[i])
-	{
-		i++;
+/* assign memory to the deep of the pointers */
 
-		while (s2[j])
+	for (i = 0; i < width; i++)
+	{
+		parr[i] = malloc (sizeof(int) * width);
+		if (parr[i] == NULL)
 		{
-			j++;
+			j = 0;
+			while (j < i)
+			{
+				free (parr[j]);
+				j ++;
+				return (NULL);
+			}
 		}
 	}
 
-	pstr = malloc(sizeof(char) * ((i  + j)  + 1));
-
-	if (pstr == NULL)
-		return (NULL);
-
-/* Reset the variables */
-	i = 0;
-	j = 0;
-
-	while (s1[i])
+	for (i = 0; i < height; i++)
 	{
-		pstr[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		pstr[i] = s2[j];
-		j++;
-		i++;
+		for (j = 0; j < width; j++)
+		{
+			parr[i][j] = 0;
+		}
 	}
 
-	pstr[i + 1] = '\0';
-
-	return (pstr);
+	return (parr);
 }
