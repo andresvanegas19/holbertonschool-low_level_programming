@@ -2,6 +2,12 @@
 #define DOG_H
 
 int _putchar(char c);
+/**
+ *Is the struct of dog and dates
+ *@name: dog name's
+ *@owner: dog owner's
+ *@age: dog age's
+ */
 struct dog
 {
 	char *name;
