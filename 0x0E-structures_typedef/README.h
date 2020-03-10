@@ -1,2 +1,5 @@
-What are structures, when, why and how to use them
+What are structures
+when use it 
+why
+how to use them
 How to use typedef
