@@ -1,6 +1,5 @@
-#ifndef DOG_H
-#define DOG_H
-
+#ifndef GRANDPARENT_H
+#define GRANDPARENT_H
 /**
  * struct dog - data of the dog
  *@name: dog name's
@@ -26,4 +25,4 @@ void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
 
-#endif
+#endif /* GRANDPARENT_H */
