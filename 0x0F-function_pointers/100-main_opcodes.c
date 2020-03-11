@@ -28,7 +28,7 @@ unsigned char main(int argc, char *argv[])
 
 	for (i = 0; i < bytess; i++)
 	{
-		printf("%hhx ", ptrmain[i]);
+		printf("%02hhx ", ptrmain[i]);
 	}
 	putchar('\n');
 
