@@ -6,7 +6,7 @@
  *@argc: is the number of command line arguments
  *@argv: an array containing the program command line arguments
  *
- * Return: Always 1.
+ * Return: Always 0
  */
 
 int main(int argc, char *argv[])
@@ -18,8 +18,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (argv[2][0] != '+' && argv[2][0] != '-' && argv[2][0] != '*'
-	    && argv[2][0] != '/' && argv[2][0] != '%')
+	if ((argv[2][0] != '+' && argv[2][0] != '-' && argv[2][0] != '*'
+	     && argv[2][0] != '/' && argv[2][0] != '%') || argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
