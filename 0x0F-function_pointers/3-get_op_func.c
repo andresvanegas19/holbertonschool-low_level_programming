@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #include "3-calc.h"
 /**
- * struct op - Struct op
+ * get_op_func - select correct function to perform the operation asked by user
+ * @s:  is the operator passed as argument to the program
  *
- * @op: The operator
- * @f: The function associated
+ * Return: the value of the function or NULL if doesnt appear
+ *
  */
 int (*get_op_func(char *s))(int, int)
 {
@@ -25,6 +26,5 @@ int (*get_op_func(char *s))(int, int)
 			return (ops[i].f);
 		i++;
 	}
-
 	return (NULL);
 }
