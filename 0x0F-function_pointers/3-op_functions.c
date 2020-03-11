@@ -1,3 +1,4 @@
+#include "3-calc.h"
 /**
  * op_add - is the sum of two digits
  * @a: the first int
