@@ -10,13 +10,20 @@ void print_all(const char * const format, ...)
 {
 	va_list allprint;
 
-	int i = 0, entero;
+	int i = 0, entero, j = 0;
 	const char *s;
 	char c;
 	float f;
 
+	while (format[i])
+	{
+		i++;
+		j++;
+	}
 
 	va_start(allprint, format);
+
+	i = 0;
 
 		while (format[i])
 		{
@@ -44,7 +51,8 @@ void print_all(const char * const format, ...)
 					printf("%d", entero);
 					break;
 				}
-				printf(", ");
+				if (i < j - 1)
+					printf(", ");
 			}
 			i++;
 		}
