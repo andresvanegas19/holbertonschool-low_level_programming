@@ -8,29 +8,42 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	float decimal;
-	int digito;
-	char cara, *pstr;
+	va_list allprint;
 
-	char f = 'f';
-	char d = 'd';
-	char c = 'c';
-	char s = 's';
+	int i = 0, entero;
+	const char *s;
+	char c;
+	float f;
 
-	while (format[i])
-	{
-		if (format[i] == f ||
-		    format[i] == d ||
-		    format[i] == c ||
-		    format[i] == s)
+
+	va_start(allprint, format);
+
+		while (format[i] &&
+		       (format[i] == 'f' ||
+			format[i] == 'd' ||
+			format[i] == 'c' ||
+			format[i] == 's'))
 		{
-			while ()
+			switch(format[i])
 			{
-				das;
+			case 'a':
+				s = va_arg(allprint, const char *);
+				printf("%s", s);
+				break;
+			case 'c':
+				c = va_arg(allprint, int);
+				printf("%c", c);
+                                break;
+			case 'f':
+				f = va_arg(allprint, double);
+				printf("%f", f);
+				break;
+			case 'i':
+				entero = va_arg(allprint, int);
+				printf("%d", entero);
+				break;
 			}
+			i++;
 		}
-		i++;
-	}
-
+	va_end(allprint);
 }
