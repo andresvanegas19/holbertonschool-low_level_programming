@@ -9,9 +9,28 @@
 void print_all(const char * const format, ...)
 {
 	int i = 0;
+	float decimal;
+	int digito;
+	char cara, *pstr;
 
-	for (i = 0; format[i] != '\0'; i++)
+	char f = 'f';
+	char d = 'd';
+	char c = 'c';
+	char s = 's';
+
+	while (format[i])
 	{
-		printf("%c\n", format[i]);
+		if (format[i] == f ||
+		    format[i] == d ||
+		    format[i] == c ||
+		    format[i] == s)
+		{
+			while ()
+			{
+				das;
+			}
+		}
+		i++;
 	}
+
 }
