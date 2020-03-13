@@ -7,20 +7,22 @@
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	int sum = 0, i = 0;
+	va_list sumalista;
+
+	int sum = 0;
+	unsigned int i = 0;
 
 	if (n == 0)
 		return (0);
 
-	va_list listSum;
-
-	va_start(listSum, n);
+	va_start(sumalista, n);
 
 	for (i = 0; i < n; i++)
-		sum += va_arg(listSum, int)
+		sum += va_arg(sumalista, int);
 
 
-	va_end(listSum);
+	va_end(sumalista);
 
 	return (sum);
+
 }
