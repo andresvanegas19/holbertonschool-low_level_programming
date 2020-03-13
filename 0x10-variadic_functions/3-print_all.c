@@ -18,32 +18,36 @@ void print_all(const char * const format, ...)
 
 	va_start(allprint, format);
 
-		while (format[i] &&
-		       (format[i] == 'f' ||
-			format[i] == 'd' ||
-			format[i] == 'c' ||
-			format[i] == 's'))
+		while (format[i])
 		{
-			switch(format[i])
+			if (format[i] == 'c' ||
+			    format[i] == 'i' ||
+			    format[i] == 'f' ||
+			    format[i] == 's')
 			{
-			case 'a':
-				s = va_arg(allprint, const char *);
-				printf("%s", s);
-				break;
-			case 'c':
-				c = va_arg(allprint, int);
-				printf("%c", c);
-                                break;
-			case 'f':
-				f = va_arg(allprint, double);
-				printf("%f", f);
-				break;
-			case 'i':
-				entero = va_arg(allprint, int);
-				printf("%d", entero);
-				break;
+				switch(format[i])
+				{
+				case 's':
+					s = va_arg(allprint, const char *);
+					printf("%s", s);
+					break;
+				case 'c':
+					c = va_arg(allprint, int);
+					printf("%c", c);
+					break;
+				case 'f':
+					f = va_arg(allprint, double);
+					printf("%f", f);
+					break;
+				case 'i':
+					entero = va_arg(allprint, int);
+					printf("%d", entero);
+					break;
+				}
+				printf(", ");
 			}
 			i++;
 		}
+		printf("\n");
 	va_end(allprint);
 }
