@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "variadic_functions.h"
+
 
 /**
  * sum_them_all - returns the sum of all its parameters
@@ -30,7 +30,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		}
 
-		putchar('\n');
+		printf("\n");
 
 		va_end(printstr);
 	}

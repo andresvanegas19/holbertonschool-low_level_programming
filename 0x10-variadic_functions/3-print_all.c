@@ -1,9 +1,17 @@
+#include <stdarg.h>
+#include <stdio.h>
+
 /**
- * main - check the code for Holberton School students.
+ * print_all - function that prints anything
+ * @format: is a list of types of arguments passed to the function
  *
- * Return: Always 0.
  */
 void print_all(const char * const format, ...)
 {
+	int i = 0;
 
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		printf("%c\n", format[i]);
+	}
 }
