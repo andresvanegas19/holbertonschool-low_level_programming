@@ -5,10 +5,9 @@
  *@argc: is the number of command line arguments
  *@argv: an array containing the program command line arguments
  *
- * Return: Always 0
- */
+*/
 
-unsigned char main(int argc, char *argv[])
+void main(int argc, char *argv[])
 {
 	int bytess = atoi(argv[1]), i = 0;
 	unsigned char *ptrmain = NULL;
@@ -32,5 +31,4 @@ unsigned char main(int argc, char *argv[])
 	}
 	putchar('\n');
 
-	return (0);
 }
