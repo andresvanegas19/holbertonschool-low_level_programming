@@ -1,5 +1,4 @@
-	global    main
-	extern    puts
+global    main
 
 	section   .text
 main:
