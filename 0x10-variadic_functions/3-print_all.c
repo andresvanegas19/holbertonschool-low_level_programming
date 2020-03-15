@@ -8,16 +8,14 @@
 void print_all(const char * const format, ...)
 {
 	va_list allprint;
-	int i = 0, entero;
-	char *s, c;
-	float f;
+	int i = 0;
+	char *s = NULL;
 
 	while (format == NULL)
 	{
 		printf("\n");
 		return;
 	}
-
 	va_start(allprint, format);
 	while (format[i])
 	{
@@ -33,16 +31,13 @@ void print_all(const char * const format, ...)
 			printf("(nil)");
 			break;
 		case 'c':
-			c = va_arg(allprint, int);
-			printf("%c", c);
+			printf("%c", va_arg(allprint, int));
 			break;
 		case 'f':
-			f = va_arg(allprint, double);
-			printf("%f", f);
+			printf("%f", va_arg(allprint, double));
 			break;
 		case 'i':
-			entero = va_arg(allprint, int);
-			printf("%d", entero);
+			printf("%d", va_arg(allprint, int));
 			break;
 		}
 		if ((format[i + 1] != '\0') && (format[i] == 's' ||
