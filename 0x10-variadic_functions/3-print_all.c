@@ -24,8 +24,12 @@ void print_all(const char * const format, ...)
 				{
 				case 's':
 					s = va_arg(allprint, char *);
-					printf("%s", s);
-					break;
+					if (s != NULL)
+					{
+						printf("%s", s);
+						break;
+					}
+					printf("(nil)");
 				case 'c':
 					c = va_arg(allprint, int);
 					printf("%c", c);
