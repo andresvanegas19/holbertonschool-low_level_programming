@@ -3,9 +3,10 @@
 #include <stdlib.h>
 
 /**
- * sum_them_all - returns the sum of all its parameters
+ * print_numbers - prints numbers, followed by a new line.
+ * @separator:  is the string to be printed between numbers
+ * @n: is the number of integers passed to the function
  *
- * Return: Always 0.
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
@@ -13,18 +14,16 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	unsigned int i = 0;
 
-	if (separator)
+	va_start(printnum, n);
+
+	for (i = 0; i < n; i++)
 	{
-		va_start(printnum, n);
-
-		for (i = 0; i < n; i++)
-		{
-			printf("%d", va_arg(printnum, int));
-			if (i != n - 1)
-				printf("%s", separator);
-		}
-		putchar('\n');
-
-		va_end(printnum);
+		printf("%d", va_arg(printnum, int));
+		if ((i != n - 1) && separator)
+			printf("%s", separator);
 	}
+	putchar('\n');
+
+	va_end(printnum);
+
 }
