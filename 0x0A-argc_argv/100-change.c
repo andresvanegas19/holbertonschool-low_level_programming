@@ -7,12 +7,13 @@
  *
  * Return: Always 1.
  */
+
 int main(int argc, char *argv[])
 {
 	int i = 0, saldo = 0, cambio = 0;
 	int coins[5] = {25, 10, 5, 1};
 
-	if (argc == 1 || argc == 0)
+	if (argc == 1 || argc == 0 || argc > 2)
 	{
 		printf("Error\n");
 		return (1);
