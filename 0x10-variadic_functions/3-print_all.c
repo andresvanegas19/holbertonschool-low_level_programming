@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * validar - function that prints anything
- * @format: is a list of types of arguments passed to the function
+ * @c: is a list of types of arguments passed to the function
  */
 int validar(char c)
 {
