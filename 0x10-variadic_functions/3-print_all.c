@@ -12,10 +12,15 @@ void print_all(const char * const format, ...)
 	char *s, c;
 	float f;
 
+	if (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
+
 	va_start(allprint, format);
 	while (format[i])
 	{
-
 		switch (format[i])
 		{
 		case 's':
