@@ -1,22 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
-/**
- * validar - function that prints anything
- * @c: is a list of types of arguments passed to the function
- */
-int validar(char c)
-{
-	int i = 0;
-	char valores[5] = { 's', 'c', 'f', 'i'};
 
-	while (i < 5)
-	{
-		if (valores[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
 /**
  * print_all - function that prints anything
  * @format: is a list of types of arguments passed to the function
@@ -29,9 +13,9 @@ void print_all(const char * const format, ...)
 	float f;
 
 	va_start(allprint, format);
-
 	while (format[i])
 	{
+
 		switch (format[i])
 		{
 		case 's':
@@ -56,7 +40,8 @@ void print_all(const char * const format, ...)
 			printf("%d", entero);
 			break;
 		}
-		if ((format[i + 1] != '\0') && validar(format[i]))
+		if ((format[i + 1] != '\0') && (format[i] == 's' ||
+		format[i] == 'c' || format[i] == 'f' || format[i] == 'i'))
 			printf(", ");
 		i++;
 	}
