@@ -7,16 +7,16 @@
  */
 void free_list(list_t *head)
 {
-	list_t *copy;
+	list_t *back;
 
-	if (!head)
+	if (head == NULL)
 		return (NULL);
 
 	while (head)
 	{
-		copy = head->next;
-		free(head);
+		back = head->next;
 		free(head->str);
-		head = copy;
+		free(head);
+		head = back;
 	}
 }
