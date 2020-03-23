@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * add_nodeint - adds a new node at the beginning of a listint_t list
+ * add_nodeint_end - adds a new node at the end of a listint_t list.
  * @head: contents of linked list starting from the given node
  *  @n: is the data to fill the new node
  *
