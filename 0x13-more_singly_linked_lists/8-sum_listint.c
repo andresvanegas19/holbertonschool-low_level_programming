@@ -9,7 +9,15 @@
 
 int sum_listint(listint_t *head)
 {
+	int sumAll = 0;
+	listint_t *cpHead = head;
 
+	while (cpHead)
+	{
+		sumAll += cpHead->n;
+		cpHead = cpHead->next;
+	}
 
+	return (sumAll);
 
 }
