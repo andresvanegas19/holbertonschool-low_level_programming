@@ -9,7 +9,7 @@
 
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *pointSlow = list, *pointFast = list;
+	listint_t *pointSlow = head, *pointFast = head;
 
 	while (pointSlow && pointFast && pointFast->next)
 	{
@@ -17,8 +17,14 @@ listint_t *find_listint_loop(listint_t *head)
 		pointFast = pointFast->next->next;
 		if (pointSlow == pointFast)
 		{
-			removeLoop(pointFast, list);
-			return 1;
+		/* start search the loop at the begging?a*/
+			pointSlow = head;
+			while (pointSlow != pointFast)
+			{
+				pointSlow  = pointSlow->next;
+				pointFast = pointFast->next;
+			}
+			return (pointSlow);
         }
     }
     return (NULL);
