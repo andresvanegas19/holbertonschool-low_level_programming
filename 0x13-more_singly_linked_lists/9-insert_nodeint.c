@@ -24,7 +24,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		newNode->n = n;
 		*head = newNode;
 		newNode->next = NULL;
-		pHead->next = newNode;
 		return (newNode);
 	}
 	if (idx == 0)
