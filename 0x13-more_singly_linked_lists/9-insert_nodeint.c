@@ -21,7 +21,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		newNode = malloc(sizeof(listint_t));
 		if (newNode == NULL)
 			return (NULL);
-		newNode->n = n;
 		*head = newNode;
 		newNode->next = NULL;
 		return (newNode);
@@ -35,6 +34,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		newNode->n = n;
 		newNode->next = pHead->next;
 		pHead->next = newNode;
+		pHead = NULL;
 		return (newNode);
 	}
 	for (; pHead; pHead = pHead->next, count++)
@@ -43,12 +43,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			newNode = malloc(sizeof(listint_t));
 			if (newNode == NULL)
 				return (NULL);
-
 			newNode->n = n;
 			newNode->next = pHead->next;
 			pHead->next = newNode;
 			pHead = NULL;
 			return (newNode);
 		}
+
 	return (NULL);
 }
