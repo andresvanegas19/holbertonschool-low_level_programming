@@ -1,9 +1,10 @@
 #include "lists.h"
 
 /**
- * main - check the code for Holberton School students.
+ * reverse_listint-  returns the number of elements in a linked listint_t list.
+ * @head: contents of linked list starting from the given node
  *
- * Return: Always 0.
+ * Return: a pointer to the first node of the reversed list
  */
 
 listint_t reverse_listint(listint_t **head)
@@ -13,13 +14,11 @@ listint_t reverse_listint(listint_t **head)
 
 	pftNode = *head;
 	beforeNode = pftNode->next;
-
 	if (!(*head) || !beforeNode)
 		return (**head);
 
 	reverse_listint(&beforeNode);
 	pftNode->next->next = pftNode;
-
 	pftNode->next = NULL;
 	*head = beforeNode;
 
