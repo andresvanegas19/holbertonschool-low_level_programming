@@ -7,20 +7,18 @@
  * Return: a pointer to the first node of the reversed list
  */
 
+
 listint_t reverse_listint(listint_t **head)
 {
-	listint_t *pftNode;
-	listint_t *beforeNode;
+	listint_t *reverseNode = *head;
 
-	pftNode = *head;
-	beforeNode = pftNode->next;
-	if (!(*head) || !beforeNode)
-		return (**head);
+	if (*head && (*head)->next)
+	{
+		*head = (*head)->next;
+		reverse_listint(head);
+		reverseNode->next->next = reverseNode;
+		reverseNode->next = NULL;
+	}
 
-	reverse_listint(&beforeNode);
-	pftNode->next->next = pftNode;
-	pftNode->next = NULL;
-	*head = beforeNode;
-
-	return (**head);
+	return (*reverseNode);
 }
