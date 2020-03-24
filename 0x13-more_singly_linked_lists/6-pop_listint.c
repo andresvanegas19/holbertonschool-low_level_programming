@@ -10,8 +10,11 @@
 
 int pop_listint(listint_t **head)
 {
-	int number;
+	int number = 0;
 	listint_t *cpdelete = *head;
+
+	if (*head == NULL)
+		return (number);
 
 	number = (*head)->n;
 	*head = (*head)->next;
