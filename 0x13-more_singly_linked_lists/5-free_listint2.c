@@ -8,9 +8,6 @@
 
 void free_listint2(listint_t **head)
 {
-	if (!*head)
-		return (*head);
-
 	while (*head)
 	{
 /* Put the pointer to acces to the node */
@@ -18,4 +15,5 @@ void free_listint2(listint_t **head)
 /* Precedencia de operadores */
 		*head = (*head)->next;
 	}
+	*head = NULL;
 }
