@@ -24,24 +24,21 @@ int _isalpha(int c)
  * Return: the converted number, or 0 if is not a digit
  */
 
-unsigned binary_to_uint(const char *bits)
+unsigned int binary_to_uint(const char *b)
 {
-    unsigned int number;
-    int i = 0;
+	unsigned int number, i = 0;
 
-	for (;bits[i]; i++)
-	    if (_isalpha(bits[i]))
-	    {
-	        return (0);
-	    }
+	for (; b[i]; i++)
+		if (_isalpha(b[i]))
+			return (0);
 
-    for (number = 0; *bits; bits++)
-    {
-        if (*bits == '1')
-            number = (number << 1) | 1;
-        else if (*bits == '0' )
-            number = number << 1;
-    }
+	for (number = 0; *b; b++)
+	{
+		if (*b == '1')
+			number = (number << 1) | 1;
+		else if (*b == '0')
+			number = number << 1;
+	}
 
-    return (number);
+	return (number);
 }
