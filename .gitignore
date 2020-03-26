@@ -1,8 +1,25 @@
 # -*- mode: gitignore; -*-
 *~
 *.o
-prueba
-
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+k
+r
+s
 \#*\#
 /.emacs.desktop
 /.emacs.desktop.lock
