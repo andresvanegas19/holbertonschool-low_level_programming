@@ -26,13 +26,16 @@ int _isalpha(int c)
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int number, i = 0;
+	unsigned long int number = 0, i = 0;
+
+	if (b == NULL)
+		return (0);
 
 	for (; b[i]; i++)
 		if (_isalpha(b[i]))
-			return (0);
+			return (number);
 
-	for (number = 0; *b; b++)
+	for (; *b; b++)
 	{
 		if (*b == '1')
 			number = (number << 1) | 1;
