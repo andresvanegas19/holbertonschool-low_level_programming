@@ -2,8 +2,8 @@
 
 /**
  * flip_bits - count the bits need it to get from one number to another.
- * @index: is the index, starting from 0 of the bit you want to set
- * @n: is the number.
+ * @m: is a number to compare
+ * @n: is a number to compare.
  *
  * Return: 1 if it worked, or -1 if an error occurred
  */
