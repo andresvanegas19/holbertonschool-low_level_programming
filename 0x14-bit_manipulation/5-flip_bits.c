@@ -1,0 +1,18 @@
+#include "holberton.h"
+
+/**
+ * flip_bits - count the bits need it to get from one number to another.
+ * @index: is the index, starting from 0 of the bit you want to set
+ * @n: is the number.
+ *
+ * Return: 1 if it worked, or -1 if an error occurred
+ */
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
+{
+	unsigned long int count, result = n ^ m;
+
+	for (count = 0; result; count += result & 1, result >>= 1)
+		;
+
+	return (count);
+}
