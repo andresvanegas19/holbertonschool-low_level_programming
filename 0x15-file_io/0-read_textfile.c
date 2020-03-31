@@ -14,7 +14,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (letters == 0)
 		return (0);
-	if (filename)
+	if (filename == NULL)
 		return (0);
 
 	p_id = open(filename, O_RDONLY);
