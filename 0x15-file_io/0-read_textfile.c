@@ -9,6 +9,27 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	ssize_t p_id, number_bytes;
+	char *data;
 
+	p_id = open(filename, O_RDONLY);
+	if (letters == 0 || filename == NULL || p_id < 0)
+		return (0);
 
+	data = malloc(sizeof(char) * letters);
+	if (data == NULL)
+		return(-1);
+
+	number_bytes = read(p_id, data, letters);
+	if (number_bytes < 0)
+		return (0);
+
+	data[number_bytes] = '\0';
+	number_bytes++;
+
+	write(1, data, number_bytes);
+
+	free(data);
+	close(p_id);
+	return (number_bytes);
 }
