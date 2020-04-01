@@ -9,7 +9,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t p_id, number_bytes;
+	ssize_t p_id, number_bytes, fail;
 	char *data;
 
 	if (letters == 0)
@@ -35,7 +35,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	data[number_bytes] = '\0';
 	number_bytes++;
 
-	write(STDIN_FILENO, data, number_bytes);
+	fail = write(STDIN_FILENO, data, number_bytes);
+	if (fail == -1)
+		return (-1);
 
 	free(data);
 	close(p_id);
