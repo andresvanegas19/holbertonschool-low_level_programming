@@ -9,22 +9,24 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int p_id, size = 0;
+	int p_id, size = 0, validacion = 0;
+
 	if (filename == NULL)
 		return (-1);
 
-    p_id = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+	p_id = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 	if (p_id < 0)
 		return (-1);
 
-	if (*text_content)
+	if (text_content)
 	{
-		while(text_content[size])
+		while (text_content[size])
 			size++;
-		write(p_id, text_content, size);
+		validacion = write(p_id, text_content, size);
+		if (validacion == -1)
+			return (-1);
 	}
 	close(p_id);
 
-    return (1);
-
+	return (1);
 }
