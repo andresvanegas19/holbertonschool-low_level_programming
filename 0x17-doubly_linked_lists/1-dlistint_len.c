@@ -2,6 +2,7 @@
 
 /**
  * dlistint_len - returns the number of elements in a linked dlistint_t list.
+ * @h: is the point to the double linked list
  *
  * Return: the number of elements
  */
