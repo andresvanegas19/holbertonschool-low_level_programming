@@ -7,11 +7,18 @@
  */
 void free_dlistint(dlistint_t *head)
 {
-    dlistint_t *tail;
+    dlistint_t *tail, *h = head;
 
     for (tail = head; tail; tail = tail->next)
+        ;
+
+    tail->prev = h;
+    printf("---------");
+    while(h)
     {
-        printf("%d", tail->n);
+        printf("%d\n%d\n",h->n,tail->n);
+        h = h->prev;
+        tail = tail->prev;
     }
 
 
