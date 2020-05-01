@@ -7,5 +7,12 @@
  */
 void free_dlistint(dlistint_t *head)
 {
+    dlistint_t *tail;
+
+    for (tail = head; tail; tail = tail->next)
+    {
+        printf("%d", tail->n);
+    }
+
 
 }
