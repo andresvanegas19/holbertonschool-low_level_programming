@@ -11,8 +11,7 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *pHead = *h, *newNode;
-	unsigned int n;
-	int count;
+	unsigned int count = 0;
 
 	if (*h == NULL)
 		return (NULL);
@@ -26,6 +25,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	newNode = malloc(sizeof(dlistint_t));
 	if (newNode == NULL)
 		return (NULL);
+	newNode->n = n;
 
 	while(pHead && count <= idx)
 	{
@@ -38,7 +38,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			}
 			else
 			{
-				
+				printf("%d actual \n%d next \n %d prev\n", pHead->n, pHead->next->n, pHead->prev->n);
+				printf("found the node\n");
 				return (newNode);
 			}
 		}
