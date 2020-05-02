@@ -11,12 +11,10 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *pHead = *h, *newNode;
-	unsigned int count = 0;
+	unsigned int count = 1;
+	/* start in one 'couse it need to be one prev node*/
 
-	if (*h == NULL)
-		return (NULL);
-
-	if (idx == 0)
+	if (idx == 0 || *h == NULL)
 	{
 		add_dnodeint(&(*h), n);
 		return (*h);
@@ -27,7 +25,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	newNode->n = n;
 
-	while(pHead && count <= idx)
+	while (pHead && count <= idx)
 	{
 		if (count == idx)
 		{
@@ -38,13 +36,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			}
 			else
 			{
-				printf("%d actual \n%d next \n %d prev\n", pHead->n, pHead->next->n, pHead->prev->n);
-				printf("found the node\n");
+				newNode->prev = pHead;
+				newNode->next = pHead->next;
+				pHead->next = newNode;
+				pHead->next->prev = newNode;
 				return (newNode);
 			}
 		}
 		count++;
 		pHead = pHead->next;
 	}
-	return(NULL);
+	return (NULL);
 }
