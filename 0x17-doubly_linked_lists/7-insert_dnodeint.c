@@ -13,7 +13,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *pHead = *h, *newNode;
 	unsigned int count = 1;
 	/* start in one 'couse it need to be one prev node*/
-	if(*h == NULL)
+	if (*h == NULL)
 		return (NULL);
 	if (idx == 0)
 	{
