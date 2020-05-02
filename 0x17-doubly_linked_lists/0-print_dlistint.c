@@ -15,11 +15,11 @@ size_t print_dlistint(const dlistint_t *h)
 		return (0);
 
 	pDoublelist = h;
-	while(pDoublelist)
+	while (pDoublelist)
 	{
 		printf("%d\n", pDoublelist->n);
 		pDoublelist = pDoublelist->next;
 		count++;
 	}
-	return(count);
+	return (count);
 }

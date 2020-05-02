@@ -8,14 +8,14 @@
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-    const dlistint_t *pHDouble;
-    int i;
+	const dlistint_t *pHDouble;
+	int i;
 
-    if (h == NULL)
-        return (0);
+	if (h == NULL)
+		return (0);
 
-    for (pHDouble = h, i = 0; pHDouble; pHDouble = pHDouble->next, i++)
-        ;
+	for (pHDouble = h, i = 0; pHDouble; pHDouble = pHDouble->next, i++)
+		;
 
-    return (i);
+	return (i);
 }

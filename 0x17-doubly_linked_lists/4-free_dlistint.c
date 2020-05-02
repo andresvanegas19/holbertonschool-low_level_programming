@@ -7,20 +7,20 @@
  */
 void free_dlistint(dlistint_t *head)
 {
-    dlistint_t *tail, *supp;
+	dlistint_t *tail, *supp;
 
-    for (tail = head; tail; tail = tail->next)
-    {
-        if (tail->next == NULL)
-        {
-            while(tail->prev)
-            {
-                supp = tail;
-                tail = tail->prev;
-                free(supp);
-            }
-            free(tail);
-            break;
-        }
-    }
+	for (tail = head; tail; tail = tail->next)
+	{
+		if (tail->next == NULL)
+		{
+			while (tail->prev)
+			{
+				supp = tail;
+				tail = tail->prev;
+				free(supp);
+			}
+			free(tail);
+			break;
+		}
+	}
 }
