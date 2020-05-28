@@ -71,4 +71,5 @@ flycheck_*.el
 /network-security.data
 
 *~
+a.out
 *main.c
