@@ -19,14 +19,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	indx = key_index((const unsigned char *)key, ht->size);
-/*
-	if (ht->array[indx] != NULL)
-		if (strcmp(ht->array[indx]->key, key) == 0)
-		{
-			ht->array[indx]->value = (char *) value;
-			return (1);
-		}
-*/
 	new_element = create_new_hash((char *) key, (char *) value);
 
 	if (ht->array[indx] == NULL)
@@ -35,7 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 
-/*	if (ht->array[indx] != NULL)*/
+
 	while (ht->array[indx] != NULL)
 	{
 		if (strcmp(ht->array[indx]->key, key) == 0)
@@ -59,21 +51,26 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * hash_table_set - adds an element to the hash table.
- * @ht: is the hash table.
+ * create_new_hash - create_new_hash
  * @key: is the key. key can not be an empty string
  * @value: is the value associated with the key. value must be duplicated.
  * value can be an empty string
  *
- * Return: 1 if it succeeded, 0 otherwise
+ * Return: the new hash if not return NULL
 */
 hash_node_t *create_new_hash(char *key, char *value)
 {
 	hash_node_t *new_element;
 
 	new_element = malloc(sizeof(hash_node_t));
+	if (!new_element)
+		return (NULL);
 	new_element->key = strdup(key);
+	if (!new_element->key)
+		return (NULL);
 	new_element->value = strdup(value);
+	if (!new_element->value)
+		return (NULL);
 	new_element->next = NULL;
 
 	return (new_element);
