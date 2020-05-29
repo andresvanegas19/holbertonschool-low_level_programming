@@ -14,6 +14,12 @@ void hash_table_print(const hash_table_t *ht)
 		return;
 
 	printf("{");
+	if (ht->array == NULL)
+	{
+		printf("}\n");
+		return;
+	}
+
 	for (; i <= (int) ht->size; i++)
 		if (ht->array[i] != NULL)
 			total++;
