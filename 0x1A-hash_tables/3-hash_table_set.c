@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 
-hash_node_t create_new_hash(char key, char value);
+hash_node_t *create_new_hash(char *key, char *value);
 /**
  * hash_table_set - adds an element to the hash table.
  * @ht: is the hash table.
@@ -13,7 +13,7 @@ hash_node_t create_new_hash(char key, char value);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int indx = 0;
-	hash_node_t *new_element = NULL;
+	hash_node_t *new_element;
 
 	if (key == NULL || value == NULL)
 		return (0);
@@ -67,13 +67,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  *
  * Return: 1 if it succeeded, 0 otherwise
 */
-hash_node_t create_new_hash(char key, char value)
+hash_node_t *create_new_hash(char *key, char *value)
 {
 	hash_node_t *new_element;
 
 	new_element = malloc(sizeof(hash_node_t));
-	new_element->key = key;
-	new_element->value = value;
+	new_element->key = strdup(key);
+	new_element->value = strdup(value);
 	new_element->next = NULL;
 
 	return (new_element);
