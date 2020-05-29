@@ -21,12 +21,16 @@ void hash_table_print(const hash_table_t *ht)
 	  }
 
 	for (; i < size; i++)
-		if (ht->array[i])
+		if (ht->array[i] == NULL)
 			total++;
+
+	total = ht->size; - total
 
 	for (i = 0; i <= size; i++)
 	{
-		if (ht->array[i])
+		if (ht->array[i] == NULL)
+			;
+		else
 		{
 			value++;
 			printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
