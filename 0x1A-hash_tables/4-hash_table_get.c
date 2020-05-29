@@ -11,26 +11,36 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int idnx = 0;
-	hash_table_t pHash = NULL
+
 
 	if (ht == NULL || key == NULL)
 		return (NULL);
 
-	idnx = key_index(key, ht->size);
+	idnx = key_index((const unsigned char *)key, ht->size);
 	if (idnx > ht->size)
+		return (NULL);
+
+	if (ht->array[idnx] == NULL)
 		return (NULL);
 
 	if ((ht->array[idnx] != NULL) && (ht->array[idnx]->next != NULL))
 	{
-		pHash = ht;
-		while (ht->array[idnx] != NULL)
+
+		while(ht->array[idnx] != NULL)
 		{
+			if (strcmp(ht->array[idnx]->key, key) == 0)
+			{
 
+				return (ht->array[idnx]->value);
+			}
+			if (ht->array[idnx]->next == NULL)
+				return (NULL);
 
+			ht->array[idnx] = ht->array[idnx]->next;
 		}
 	}
 
-	if (strcmp(ht->array[idnx], key) == 0)
-		return (ht->array[idnx]);
-	return (NULL)
+	if (strcmp(ht->array[idnx]->key, key) == 0)
+		return (ht->array[idnx]->value);
+	return (NULL);
 }
