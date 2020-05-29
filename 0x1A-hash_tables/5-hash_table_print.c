@@ -9,7 +9,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	int i = 0, total = 0, size = (int) ht->size, value = 0;
-	hash_node_t *pHt = NULL;
+	hash_node_t *pHt;
 
 	if (ht == NULL)
 		return;
@@ -30,7 +30,7 @@ void hash_table_print(const hash_table_t *ht)
 	for (i = 0; i <= size; i++)
 	{
 		pHt = ht->array[i];
-		if (pHt != NULL)
+		if (pHt)
 		{
 			value++;
 			printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
