@@ -8,7 +8,7 @@
 */
 void hash_table_print(const hash_table_t *ht)
 {
-	int i = 0, total = 0, value = 0;
+	int i = 0, total = 0, value = 0, size = (int) ht->size;
 
 	if (ht == NULL)
 		return;
@@ -20,13 +20,14 @@ void hash_table_print(const hash_table_t *ht)
 		return;
 	}
 
-	for (; i <= (int) ht->size; i++)
-		if (ht->array[i] != NULL)
+	for (; i < size; i++)
+		if (hash_t->array[i])
 			total++;
 
-	for (i = 0; i <= (int) ht->size; i++)
+
+	for (i = 0; i <= ; i++)
 	{
-		if (ht->array[i] != NULL)
+		if (ht->array[i])
 		{
 			value++;
 			printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
