@@ -24,7 +24,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			ht->array[indx]->value = (char *) value;
 			return (1);
 		}
-
 	new_element = malloc(sizeof(hash_node_t));
 	new_element->key = (char *) key;
 	new_element->value = (char *) value;
