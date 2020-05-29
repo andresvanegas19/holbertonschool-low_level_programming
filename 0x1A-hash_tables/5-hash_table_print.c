@@ -29,14 +29,17 @@ void hash_table_print(const hash_table_t *ht)
 
 	for (i = 0; i <= size; i++)
 	{
-		pHt = ht->array[i];
-		if (pHt)
+		if (ht->array[i])
 		{
-			value++;
-			printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
-			if (value < total)
-				printf(", ");
-			pHt = pHt->next;
+			temp = ht->array[i];
+			while (temp)
+			{
+				if (total > 0)
+					printf(", ");
+				printf("'%s': '%s'", temp->key, temp->value);
+				total--;
+				temp = temp->next;
+			}
 		}
 	}
 	printf("}\n");
