@@ -8,7 +8,7 @@
 */
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int i = 0, found_space = 0, total = 0;
+	unsigned long int i = 0, total = 0;
 	hash_node_t *pHt;
 
 	if (ht == NULL)
@@ -24,16 +24,16 @@ void hash_table_print(const hash_table_t *ht)
 	for (; i < ht->size; i++)
 		if (ht->array[i])
 			total++;
-
+	total--;
 	for (i = 0; i < ht->size; i++)
 	{
 		pHt = ht->array[i];
 		while (pHt)
 		{
 			printf("'%s': '%s'", pHt->key, pHt->value);
-			if (found_space > 0)
+			if (total > 0)
 					printf(", ");
-			found_space--;
+			total--;
 			pHt = pHt->next;
 		}
 	}
