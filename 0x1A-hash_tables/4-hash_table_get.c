@@ -26,7 +26,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if ((ht->array[idnx] != NULL) && (ht->array[idnx]->next != NULL))
 	{
 
-		while(ht->array[idnx] != NULL)
+		while (ht->array[idnx] != NULL)
 		{
 			if (strcmp(ht->array[idnx]->key, key) == 0)
 			{
