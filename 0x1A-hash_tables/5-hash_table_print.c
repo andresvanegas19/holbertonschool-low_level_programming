@@ -32,7 +32,7 @@ void hash_table_print(const hash_table_t *ht)
 		{
 			printf("'%s': '%s'", pHt->key, pHt->value);
 			if (total > 0)
-					printf(", ");
+				printf(", ");
 			total--;
 			pHt = pHt->next;
 		}
