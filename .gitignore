@@ -37,7 +37,7 @@ tramp
 
 # flymake-mode
 *_flymake.*
-
+f.dSYM
 # eshell files
 /eshell/history
 /eshell/lastdir
