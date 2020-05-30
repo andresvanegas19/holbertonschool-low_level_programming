@@ -13,39 +13,30 @@ hash_node_t *create_new_hash(char *key, char *value);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int indx = 0;
-	hash_node_t *new_element;
+	hash_node_t *new_element, *aux;
 
-	if (key == NULL || value == NULL || ht == NULL)
+
+	if (ht == NULL || (key == NULL || strlen(key) < 0) || value == NULL)
 		return (0);
 
 	indx = key_index((const unsigned char *)key, ht->size);
-	new_element = create_new_hash((char *) key, (char *) value);
 
-	if (ht->array[indx] == NULL)
-	{
-		ht->array[indx] = new_element;
-		return (1);
-	}
-
-
-	while (ht->array[indx] != NULL)
+	aux = ht->array[indx];
+	for (; ht->array[indx] != NULL;)
 	{
 		if (strcmp(ht->array[indx]->key, key) == 0)
 		{
-			free(new_element->value), free(new_element->key);
-			free(new_element);
-			ht->array[indx]->value = (char *) value;
-			return (1);
-		}
-		if (ht->array[indx]->next == NULL)
-		{
-			ht->array[indx]->next = new_element;
+			free(ht->array[indx]->key);
+			ht->array[indx]->value = strdup(value);
 			return (1);
 		}
 		ht->array[indx] = ht->array[indx]->next;
 	}
+	ht->array[indx] = aux;
+	new_element = create_new_hash((char *) key, (char *) value);
 
-	ht->array[indx] = new_element;
+	new_element->next = ht->array[index];
+	ht->array[index] = new_element;
 
 	return (1);
 }

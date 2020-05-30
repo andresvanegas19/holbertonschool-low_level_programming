@@ -8,7 +8,9 @@
 void hash_table_delete(hash_table_t *ht)
 {
 	int i = 0;
-	hash_table_t *pHt;
+	hash_node_t *pHt;
+
+
 	for (i = 0; i <= (int) ht->size; i++)
 	{
 	/* it will not pass from here if it is null*/
