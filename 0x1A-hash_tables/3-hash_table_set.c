@@ -1,6 +1,5 @@
 #include "hash_tables.h"
 
-hash_node_t *create_new_hash(char *key, char *value);
 /**
  * hash_table_set - adds an element to the hash table.
  * @ht: is the hash table.
@@ -22,25 +21,22 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	indx = key_index((const unsigned char *)key, ht->size);
 
 	aux = ht->array[indx];
-	for (; ht->array[indx] != NULL;)
+	while (aux != NULL)
 	{
-		if (strcmp(ht->array[indx]->key, key) == 0)
+		if (strcmp(aux->key, key) == 0)
 		{
-			free(ht->array[indx]->key);
-			ht->array[indx]->value = strdup(value);
+			free(aux->key);
+			aux->value = strdup(value);
 			return (1);
 		}
-		ht->array[indx] = ht->array[indx]->next;
+		aux = aux->next;
 	}
-	ht->array[indx] = aux;
 	new_element = create_new_hash((char *) key, (char *) value);
-
-	new_element->next = ht->array[index];
-	ht->array[index] = new_element;
+	new_element->next = ht->array[indx];
+	ht->array[indx] = new_element;
 
 	return (1);
 }
-
 /**
  * create_new_hash - create_new_hash
  * @key: is the key. key can not be an empty string
