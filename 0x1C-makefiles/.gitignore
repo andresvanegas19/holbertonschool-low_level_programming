@@ -1,5 +1,6 @@
 # in this section will be ignore the .o and the temp files
 holberton.c
+holberton
 m.h
 main.c
 *.c
