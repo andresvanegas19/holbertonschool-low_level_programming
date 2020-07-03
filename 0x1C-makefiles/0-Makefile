@@ -1,2 +1,4 @@
+# This make a executable name it holberton
+
 all: holberton
 	gcc main.c holberton.c -o holberton
