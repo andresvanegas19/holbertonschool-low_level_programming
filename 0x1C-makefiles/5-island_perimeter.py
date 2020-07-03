@@ -3,7 +3,9 @@
 
 
 def island_perimeter(grid):
-     """ This """
+     """ This function  that will calculate the area of
+     an island and it will return
+     :return = """
      if not grid:
           return 0
      total = 0
