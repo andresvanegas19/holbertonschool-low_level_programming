@@ -3,5 +3,6 @@ holberton.c
 holberton
 m.h
 main.c
+*.py
 *.c
 0x1B.c
