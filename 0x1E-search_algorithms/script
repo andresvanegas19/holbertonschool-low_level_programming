@@ -1,0 +1,5 @@
+docker run -dit \
+	--name gcc \
+	-v /Users/imac/Documents/c_proyects/holbertonschool-low_level_programming/0x1E-search_algorithms:/algo \
+	teeks99/gcc-ubuntu
+

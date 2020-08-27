@@ -1,0 +1,12 @@
+Betty
+0-linear
+1-binary
+100-jump
+102-interpolation
+103-exponential
+create_list.c
+create_skiplist.c
+free_list.c
+free_skiplist.c
+print_list.c
+print_skiplist.c
