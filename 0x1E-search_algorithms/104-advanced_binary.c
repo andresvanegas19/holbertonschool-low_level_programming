@@ -34,9 +34,9 @@ int binary_search(int *array, int value, int left, int right)
 			return (partiton);
 
 		if (array[partiton] < value)
-			return binary_search(array, value, partiton + 1, right);
+			return (binary_search(array, value, partiton + 1, right));
 		else
-			return binary_search(array, value, left, partiton - 1);
+			return (binary_search(array, value, left, partiton - 1));
 	}
 
 	return (-1);

@@ -5,7 +5,7 @@
  * array of integers using the Interpolation search algorithm
  * @array:  is a pointer to the first element of the array to search in
  * @size:  is the number of elements in array
- * @value:  is the value to search for
+ * @value:  is the value it will search
  *
  * Return: the first index where value is located or
  * is not present in array or if array is NULL, the
@@ -36,7 +36,6 @@ int interpolation_search(int *array, size_t size, int value)
 			low = position + 1;
 		else
 			high = position - 1;
-
 	}
 
 	return (-1);
