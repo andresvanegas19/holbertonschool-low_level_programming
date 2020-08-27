@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 /**
  * binary_search -  searches for a value in a sorted array
  * of integers using the Binary search algorithm
@@ -62,7 +61,7 @@ int advanced_binary(int *array, size_t size, int value)
 	if (array[0] == value)
 		return (0);
 
-	return binary_search(array, value, 0, (int)size );
+	return binary_search(array, value, 0, (int)size);
 
 	return (-1);
 }
