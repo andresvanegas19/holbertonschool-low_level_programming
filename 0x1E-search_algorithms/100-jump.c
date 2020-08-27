@@ -37,15 +37,12 @@ int jump_search(int *array, size_t size, int value)
 
 	for (; i < (int)size; i += block)
 	{
-		/* TODO: "Value checked array" */
 		print(array, i, 0, block);
 		if (array[i + block] >= value)
 		{
-			/* TODO: "found between indexes" */
 			print(array, i, 1, block);
 			for (j = i; j <= i + block; j++)
 			{
-				/* TODO: "Value checked array" */
 				print(array, j, 0, block);
 				if (array[j] == value)
 					return (j);
