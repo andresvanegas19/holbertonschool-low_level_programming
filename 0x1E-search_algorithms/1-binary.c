@@ -18,7 +18,6 @@ void print(int *array, int init, int end)
 			if (init + 1 != end)
 				printf(", ");
 		}
-
 		printf("\n");
 	}
 }
