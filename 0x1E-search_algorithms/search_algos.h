@@ -35,4 +35,11 @@ int exponential_search(int *array, size_t size, int value);
 int advanced_binary(int *array, size_t size, int value);
 
 
+/* Jump search in a singly linked list  */
+listint_t *jump_list(listint_t *list, size_t size, int value);
+listint_t *create_list(int *array, size_t size);
+void print_list(const listint_t *list);
+void free_list(listint_t *list);
+
+
 #endif /* SEARCH */
